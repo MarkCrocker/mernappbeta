@@ -5,6 +5,9 @@ import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
 import Landing from "./components/layout/Landing";
 import Alert from "./components/layout/Alert";
+import Dashboard from "./components/dashboard/Dashboard";
+import PrivateRoute from "./components/routing/PrivateRoute";
+
 // Redux
 import { Provider } from "react-redux";
 import store from "./store";
@@ -34,6 +37,11 @@ const App = () => {
             <Routes>
               <Route exact path="/register" element={<Register />} />
               <Route exact path="/login" element={<Login />} />
+              <Route
+                exact
+                path="/dashboard"
+                element={<PrivateRoute component={Dashboard} />}
+              />
             </Routes>
           </section>
         </Fragment>
